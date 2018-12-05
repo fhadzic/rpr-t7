@@ -8,6 +8,7 @@ public class UN implements Serializable {
     List<Drzava> drzave = new ArrayList<>();
 
     public UN() {
+        this.drzave = null;
     }
 
     public List<Drzava> getDrzave() {

@@ -10,7 +10,13 @@ public class Drzava implements Serializable {
     private String jedinicaZaPovrsinu;
     private Grad glavni;
 
-    public Drzava(){ }
+    public Drzava(){
+        this.naziv = null;
+        this.brojStanovnika = 0;
+        this.povrsina = 0;
+        this.jedinicaZaPovrsinu = null;
+        this.glavni = null;
+    }
 
     public String getNaziv() {
         return naziv;
