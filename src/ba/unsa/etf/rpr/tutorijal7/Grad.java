@@ -36,4 +36,26 @@ public class Grad implements Serializable {
     public void setTempereture(double[] tempereture) {
         this.temperature = tempereture;
     }
+
+    @Override
+    public String toString() {
+        String result = "";
+
+        result = "Grad " + getNaziv() + ", broj stanovnika: " + brojStanovnika + ".\nTemperature: ";
+
+        for (int i=0; i<temperature.length; i++){
+            if(i==0){
+
+            }else{
+                result += ", ";
+            }
+            result += temperature[i];
+
+            if(i == temperature.length-1){
+                result += ".\n";
+            }
+        }
+
+        return result;
+    }
 }

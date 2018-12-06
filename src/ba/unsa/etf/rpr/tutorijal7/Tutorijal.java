@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.tutorijal7;
 
+import java.beans.XMLDecoder;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.Serializable;
@@ -8,6 +10,20 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Tutorijal implements Serializable {
+
+
+    public static void ucitajXml( ArrayList<Grad> gradovi ){
+        Drzava d = null;
+        try{
+            XMLDecoder ulaz = new XMLDecoder(new FileInputStream("drzave.xml"));
+            d = (Drzava) ulaz.readObject();
+            ulaz.close();
+        }catch (Exception e){
+            System.out.println("Greška: "+e);
+        }
+
+    }
+
 
     public static ArrayList<Grad> ucitajGradove() throws FileNotFoundException {
 
@@ -60,7 +76,7 @@ public class Tutorijal implements Serializable {
         try {
             var gradovi = ucitajGradove();
             for(Grad grad : gradovi) {
-                System.out.println(grad.getNaziv());
+                System.out.println(grad);
             }
         }catch (FileNotFoundException e){
             return;
